@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="action_file_manager_form" model="ir.actions.act_window">
+            <field name="name">file.manager.form</field>
+            <field name="res_model">file.manager</field>
+            <field name="view_mode">form</field>
+            <field name="target">current</field>
+        </record>
+
+        <record id="action_file_manager_tree" model="ir.actions.act_window">
+            <field name="name">List of files</field>
+            <field name="res_model">file.manager</field>
+            <field name="view_mode">tree</field>
+            <field name="target">current</field>
+        </record>
+
+        <record id="menu_file_manager" model="ir.ui.menu">
+            <field name="name">Manage files</field>
+            <field name="action" ref="action_file_manager_tree"/>
+        </record>
+
+        <menuitem id="menu_file_manager_sub" name="Download" parent="menu_file_manager"
+                  action="action_file_manager_form"/>
+    </data>
+</odoo>
+
